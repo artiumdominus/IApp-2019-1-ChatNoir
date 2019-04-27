@@ -1,12 +1,11 @@
-DROP DATABASE IF EXISTS UselessChat;
-CREATE DATABASE IF NOT EXISTS UselessChat;
-USE UselessChat;
+DROP DATABASE IF EXISTS Loneliness;
+CREATE DATABASE IF NOT EXISTS Loneliness;
+USE Loneliness;
 SET time_zone = '+3:00';
 
 CREATE TABLE Perfil (
 nome VARCHAR(70) NOT NULL,
 username VARCHAR(70) NOT NULL,
-senha VARCHAR(20) NOT NULL,
 numeroDeTelefone VARCHAR(70) NOT NULL,
 bio VARCHAR(70),
 chatAddress VARCHAR(70) NOT NULL,
@@ -19,7 +18,6 @@ groupname VARCHAR(70) NOT NULL,
 descricao VARCHAR(70),
 tipo TINYINT,
 chatAddress VARCHAR(70) NULL,
-criador VARCHAR(70) NOT NULL,
 PRIMARY KEY (groupname)
 );
 
@@ -31,11 +29,6 @@ status VARCHAR(10),
 emissor VARCHAR(70),
 receptor VARCHAR(70),
 PRIMARY KEY (id)
-);
-
-CREATE TABLE Membro (
-groupname VARCHAR(70) NOT NULL,
-username VARCHAR(70) NOT NULL
 );
 
 CREATE TABLE Administrador (
