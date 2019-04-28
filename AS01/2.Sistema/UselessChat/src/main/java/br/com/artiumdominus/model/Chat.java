@@ -1,5 +1,6 @@
 package br.com.artiumdominus.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Chat {
@@ -7,7 +8,9 @@ public class Chat {
     private String address;
     private List<Mensagem> mensagens;
 
-    public Chat(){}
+    public Chat(){
+        mensagens = new ArrayList<Mensagem>();
+    }
 
     public String getAddress() {
         return address;

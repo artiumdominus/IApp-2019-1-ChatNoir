@@ -1,5 +1,6 @@
 package br.com.artiumdominus.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Grupo {
@@ -13,7 +14,10 @@ public class Grupo {
     private List<Perfil> membros;
     private List<Perfil> administradores;
 
-    public Grupo(){}
+    public Grupo(){
+        membros = new ArrayList<Perfil>();
+        administradores = new ArrayList<Perfil>();
+    }
 
     public String getNome() {
         return nome;
