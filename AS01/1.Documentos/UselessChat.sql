@@ -18,8 +18,8 @@ nome VARCHAR(70) NOT NULL,
 groupname VARCHAR(70) NOT NULL,
 descricao VARCHAR(70),
 tipo TINYINT,
-chatAddress VARCHAR(70) NULL,
 criador VARCHAR(70) NOT NULL,
+chatAddress VARCHAR(70) NOT NULL,
 PRIMARY KEY (groupname)
 );
 

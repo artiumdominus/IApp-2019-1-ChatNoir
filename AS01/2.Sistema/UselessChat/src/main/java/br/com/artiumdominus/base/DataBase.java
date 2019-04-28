@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import br.com.artiumdominus.Utils;
 
@@ -47,7 +49,7 @@ public class DataBase {
 
             statement.execute(sql);
 
-            sql = "CREATE TABLE Perfil (" +
+            sql = "CREATE TABLE Perfis (" +
                     "nome VARCHAR(70) NOT NULL," +
                     "username VARCHAR(70) NOT NULL," +
                     "numeroDeTelefone VARCHAR(70) NOT NULL," +
@@ -58,18 +60,19 @@ public class DataBase {
 
             statement.execute(sql);
 
-            sql = "CREATE TABLE Grupo (" +
+            sql = "CREATE TABLE Grupos (" +
                     "nome VARCHAR(70) NOT NULL," +
                     "groupname VARCHAR(70) NOT NULL," +
                     "descricao VARCHAR(70)," +
                     "tipo TINYINT," +
-                    "chatAddress VARCHAR(70) NULL," +
+                    "criador VARCHAR(70) NOT NULL," +
+                    "chatAddress VARCHAR(70) NOT NULL," +
                     "PRIMARY KEY (groupname)" +
             ");";
 
             statement.execute(sql);
 
-            sql = "CREATE TABLE Mensagem (" +
+            sql = "CREATE TABLE Mensagens (" +
                     "id INT NOT NULL AUTO_INCREMENT," +
                     "conteudo VARCHAR(1000) NOT NULL," +
                     "envio DATETIME NOT NULL," +
@@ -81,7 +84,14 @@ public class DataBase {
 
             statement.execute(sql);
 
-            sql = "CREATE TABLE Administrador (" +
+            sql = "CREATE TABLE Membros (" +
+                    "groupname VARCHAR(70) NOT NULL," +
+                    "username VARCHAR(70) NOT NULL" +
+            ");";
+
+            statement.execute(sql);
+
+            sql = "CREATE TABLE Administradores (" +
                     "groupname VARCHAR(70) NOT NULL," +
                     "username VARCHAR(70) NOT NULL" +
             ");";
@@ -237,7 +247,7 @@ public class DataBase {
     public static void importarLote(String path) {
         String user = null;
         int chatAddressProfile = 1;
-        char chatAdressGroup = 27;
+        char chatAdressGroup = 97;
 
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF8"));
@@ -306,34 +316,111 @@ public class DataBase {
 
                 } else if (operation.equals("exit ")) {
                     user = null;
-                } else if (operation.equals("send ")) {
-                    String destinatario = line.substring(5, 75);
-                    String conteudo = line.substring(75, 1075);
+                } else if (operation.equals("send ")) { // Checar se o usuário não está enviando mensagem para um grupo que ele não pertence
+                    if (user != null) {
+                        String destinatario = line.substring(5, 75).trim();
+                        String conteudo = line.substring(75, 1075).trim();
 
-                    connection = ConexaoMySQL.getConexaoMySQL();
+                        connection = ConexaoMySQL.getConexaoMySQL();
 
-                    if (connection != null) {
-                        statement = connection.createStatement();
+                        if (connection != null) {
+                            statement = connection.createStatement();
 
-                        System.out.println();
+                            System.out.println("Enviando mensagem");
 
-                        String sql = "";
+                            SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+                            String sql = "INSERT INTO Mensagem (conteudo, envio, status, emissor, receptor) VALUES " +
+                                    "(\"" + conteudo + "\",\"" + format.format(new Date()) + "\", \"enviado\", \"" +
+                                    user + "\", \"" + destinatario + "\");";
 
-                        ResultSet result = statement.executeQuery(sql);
+                            statement.execute("USE UselessChat");
+                            statement.executeUpdate(sql);
 
-                        if (result.next()) {
-
+                            statement.close();
+                            connection.close();
                         }
-
-                        statement.close();
-                        connection.close();
+                    } else {
+                        System.out.println("Usuário não logado");
                     }
-
                 } else if (operation.equals("new_g")) {
-                    String groupname = line.substring(5, 75);
-                    String username = line.substring(75, 145);
-                    int tipo = Integer.parseInt(line.substring(145,145));
-                    String descricao = line.substring(146, 216);
+                    String groupname = line.substring(5, 75).trim();
+                    String nome = line.substring(75, 145).trim();
+                    int tipo = Integer.parseInt(line.substring(145,146));
+                    String descricao = line.substring(146, 216).trim();
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println("Criando novo grupo");
+
+                        String sql = "INSERT INTO Grupo VALUES (\"" + nome + "\", \"" + groupname + "\", \"" + descricao +
+                                "\", \"" + tipo + "\", \"" + user + "\", \"" + chatAdressGroup + "\");";
+
+                        statement.execute("USE UselessChat");
+                        statement.executeUpdate(sql);
+
+                        chatAdressGroup++;
+
+                        sql = "INSERT INTO Membro VALUES (\"" + groupname + "\", \"" + user + "\");";
+                        statement.executeUpdate(sql);
+                        sql = "INSERT INTO Administrador VALUES (\"" + groupname + "\", \"" + user + "\");";
+                        statement.executeUpdate(sql);
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("+mem ")) { // Checar se o usuário é administrador deste grpo
+                    if (user != null) {
+                        String groupname = line.substring(5, 75).trim();
+                        String username = line.substring(75, 145).trim();
+
+                        connection = ConexaoMySQL.getConexaoMySQL();
+
+                        if (connection != null) {
+                            statement = connection.createStatement();
+
+                            System.out.println("Adicionando novo membro");
+
+                            String sql = "INSERT INTO Membro VALUES (\"" + groupname + "\", \"" + username + "\");";
+
+                            statement.execute("USE UselessChat");
+                            statement.executeUpdate(sql);
+
+                            statement.close();
+                            connection.close();
+                        }
+                    } else {
+                        System.out.println("Usuário não logado");
+                    }
+                } else if (operation.equals("+admn")) { // Checar se o usuário é dono deste grupo
+                    if (user != null) {
+                        String groupname = line.substring(5, 75).trim();
+                        String username = line.substring(75, 145).trim();
+
+                        connection = ConexaoMySQL.getConexaoMySQL();
+
+                        if (connection != null) {
+                            statement = connection.createStatement();
+
+                            System.out.println("Adicionando novo administrador");
+
+                            String sql = "INSERT INTO Administrador VALUES (\"" + groupname + "\", \"" + username + "\");";
+
+                            statement.execute("USE UselessChat");
+                            statement.executeUpdate(sql);
+
+                            statement.close();
+                            connection.close();
+                        }
+                    } else {
+                        System.out.println("Usuário não logado");
+                    }
+                } else if (operation.equals("-admn")) { // Não implementado
+                    String groupname = line.substring(5, 75).trim();
+                    String username = line.substring(75, 145).trim();
 
                     connection = ConexaoMySQL.getConexaoMySQL();
 
@@ -354,78 +441,9 @@ public class DataBase {
                         connection.close();
                     }
 
-                } else if (operation.equals("+mem ")) {
-                    String groupname = line.substring(5, 75);
-                    String username = line.substring(75, 145);
-
-                    connection = ConexaoMySQL.getConexaoMySQL();
-
-                    if (connection != null) {
-                        statement = connection.createStatement();
-
-                        System.out.println();
-
-                        String sql = "";
-
-                        ResultSet result = statement.executeQuery(sql);
-
-                        if (result.next()) {
-
-                        }
-
-                        statement.close();
-                        connection.close();
-                    }
-
-                } else if (operation.equals("+admn")) {
-                    String groupname = line.substring(5, 75);
-                    String username = line.substring(75, 145);
-
-                    connection = ConexaoMySQL.getConexaoMySQL();
-
-                    if (connection != null) {
-                        statement = connection.createStatement();
-
-                        System.out.println();
-
-                        String sql = "";
-
-                        ResultSet result = statement.executeQuery(sql);
-
-                        if (result.next()) {
-
-                        }
-
-                        statement.close();
-                        connection.close();
-                    }
-
-                } else if (operation.equals("-admn")) {
-                    String groupname = line.substring(5, 75);
-                    String username = line.substring(75, 145);
-
-                    connection = ConexaoMySQL.getConexaoMySQL();
-
-                    if (connection != null) {
-                        statement = connection.createStatement();
-
-                        System.out.println();
-
-                        String sql = "";
-
-                        ResultSet result = statement.executeQuery(sql);
-
-                        if (result.next()) {
-
-                        }
-
-                        statement.close();
-                        connection.close();
-                    }
-
-                } else if (operation.equals("-mem ")) {
-                    String groupname = line.substring(5, 75);
-                    String username = line.substring(75, 145);
+                } else if (operation.equals("-mem ")) { // Não implementado
+                    String groupname = line.substring(5, 75).trim();
+                    String username = line.substring(75, 145).trim();
 
                     connection = ConexaoMySQL.getConexaoMySQL();
 
