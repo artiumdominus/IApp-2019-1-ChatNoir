@@ -16,12 +16,7 @@ public class Main {
         System.out.println(ConexaoMySQL.statusConnection());
         */
 
-        try {
-            DataBase.createDataBase();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
+        DataBase.importarLote("src/main/resources/lote_completo.txt");
     }
 
 }

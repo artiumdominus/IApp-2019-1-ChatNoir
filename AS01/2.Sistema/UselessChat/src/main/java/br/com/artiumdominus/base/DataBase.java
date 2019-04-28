@@ -1,12 +1,9 @@
 package br.com.artiumdominus.base;
 
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.BufferedReader;
 import java.sql.ResultSet;
 
 import br.com.artiumdominus.Utils;
@@ -234,6 +231,232 @@ public class DataBase {
 
             statement.close();
             connection.close();
+        }
+    }
+
+    public static void importarLote(String path) {
+        String user = null;
+        int chatAddressProfile = 1;
+        char chatAdressGroup = 27;
+
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF8"));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String operation = line.substring(0,5);
+                if (operation.equals("login")) {
+                    String username = line.substring(5, 75).trim();
+                    String senha = line.substring(75, 95).trim();
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println("Logando no sistema.");
+
+                        String sql = "SELECT senha FROM Perfil WHERE username = \"" + username + "\";";
+
+                        statement.execute("USE UselessChat");
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+                            String senha_registrada = result.getString("senha");
+                            if (senha.equals(senha_registrada)) {
+                                user = username;
+                                System.out.println("Logado com sucesso.");
+                            } else {
+                                System.out.println("Senha incorreta.");
+                            }
+                        } else {
+                            System.out.println("Usuário não encontrado.");
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("logon")) {
+                    String username = line.substring(5, 75).trim();
+                    String senha = line.substring(75, 95).trim();
+                    String nome = line.substring(95, 165).trim();
+                    String numeroDeTelefone = line.substring(165, 235).trim();
+                    String bio = line.substring(235, 305).trim();
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println("Criando novo usuário.");
+
+                        String sql = "INSERT INTO Perfil (nome, username, senha, numeroDeTelefone, bio, chatAddress) " +
+                                "VALUES (\"" + nome + "\", \"" + username + "\", \"" + senha + "\", \"" +
+                                numeroDeTelefone + "\", \"" + bio + "\", \"" + chatAddressProfile + "\");";
+
+                        statement.execute("USE UselessChat");
+                        statement.executeUpdate(sql);
+
+                        chatAddressProfile++;
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("exit ")) {
+                    user = null;
+                } else if (operation.equals("send ")) {
+                    String destinatario = line.substring(5, 75);
+                    String conteudo = line.substring(75, 1075);
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println();
+
+                        String sql = "";
+
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("new_g")) {
+                    String groupname = line.substring(5, 75);
+                    String username = line.substring(75, 145);
+                    int tipo = Integer.parseInt(line.substring(145,145));
+                    String descricao = line.substring(146, 216);
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println();
+
+                        String sql = "";
+
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("+mem ")) {
+                    String groupname = line.substring(5, 75);
+                    String username = line.substring(75, 145);
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println();
+
+                        String sql = "";
+
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("+admn")) {
+                    String groupname = line.substring(5, 75);
+                    String username = line.substring(75, 145);
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println();
+
+                        String sql = "";
+
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("-admn")) {
+                    String groupname = line.substring(5, 75);
+                    String username = line.substring(75, 145);
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println();
+
+                        String sql = "";
+
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                } else if (operation.equals("-mem ")) {
+                    String groupname = line.substring(5, 75);
+                    String username = line.substring(75, 145);
+
+                    connection = ConexaoMySQL.getConexaoMySQL();
+
+                    if (connection != null) {
+                        statement = connection.createStatement();
+
+                        System.out.println();
+
+                        String sql = "";
+
+                        ResultSet result = statement.executeQuery(sql);
+
+                        if (result.next()) {
+
+                        }
+
+                        statement.close();
+                        connection.close();
+                    }
+
+                }
+            }
+            reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 
