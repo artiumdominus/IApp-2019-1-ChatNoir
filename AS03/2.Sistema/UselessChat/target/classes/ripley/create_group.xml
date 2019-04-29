@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<new-group>
+  <operacao>
+    <op>new group</op>
+    <groupname>bountyhunters</groupname>
+    <nome>Bounty Hunters</nome>
+    <tipo>0</tipo>
+    <descricao>Hunters Association</descricao>
+  </operacao>
+</new-group>

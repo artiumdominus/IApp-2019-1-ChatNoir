@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<add-member>
+  <operacao>
+    <op>add member</op>
+    <groupname>section9</groupname>
+    <username>major</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>section9</groupname>
+    <username>artiumdominus</username>
+  </operacao>
+</add-member>

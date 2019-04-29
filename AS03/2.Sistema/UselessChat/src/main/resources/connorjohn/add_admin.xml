@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<add-admin>
+  <operacao>
+    <op>add admin</op>
+    <groupname>resistance</groupname>
+    <username>connorjohn</username>
+  </operacao>
+  <operacao>
+    <op>add admin</op>
+    <groupname>resistance</groupname>
+    <username>connorsarah</username>
+  </operacao>
+  <operacao>
+    <op>add admin</op>
+    <groupname>resistance</groupname>
+    <username>kylereese</username>
+  </operacao>
+</add-admin>

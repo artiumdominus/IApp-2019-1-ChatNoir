@@ -1,0 +1,7 @@
+logon
+login
+logout
+new group
+add member
+add admin
+send

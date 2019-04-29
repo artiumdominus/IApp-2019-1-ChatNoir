@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>7</destinatario>
+    <conteudo>What are you doing?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>b</destinatario>
+    <conteudo>Alright, my name is John.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>6</destinatario>
+    <conteudo>I will, so don't worry.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>My name is ragnar.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>Why should I tell you that?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Okay.</conteudo>
+  </operacao>
+</send-message>

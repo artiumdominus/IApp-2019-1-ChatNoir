@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Me either</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>No that's my name.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>Many things.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>I don't know you are wrong.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>4</destinatario>
+    <conteudo>No, thank you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>I don't know.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>I have not tried thoughs before.</conteudo>
+  </operacao>
+</send-message>

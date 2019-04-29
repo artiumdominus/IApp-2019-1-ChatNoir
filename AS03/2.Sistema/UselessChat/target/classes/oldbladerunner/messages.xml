@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>We don't have kids silly.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>I don't even know you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>What's your favorite book?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>b</destinatario>
+    <conteudo>I don't have hair</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>4</destinatario>
+    <conteudo>What's your favorite color?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>6</destinatario>
+    <conteudo>Blue, What about you?</conteudo>
+  </operacao>
+</send-message>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<add-admin>
+  <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>ripley</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>mirrorshades</username>
+  </operacao>
+</add-admin>

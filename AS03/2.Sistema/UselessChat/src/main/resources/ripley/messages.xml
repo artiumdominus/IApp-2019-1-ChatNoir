@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>I don't know</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>1</destinatario>
+    <conteudo>I told you mine.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>Never mind, bye.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>Your what?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Want to be my girlfriend.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>Yes I guess.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>Would you like some water?</conteudo>
+  </operacao>
+</send-message>

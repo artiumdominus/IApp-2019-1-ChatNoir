@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>Hello, who are you?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>I don't want to tell you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>1</destinatario>
+    <conteudo>What?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>But we will.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>That's good.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>I like sweet tea.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>So what do you wanto to talk about?</conteudo>
+  </operacao>
+</send-message>

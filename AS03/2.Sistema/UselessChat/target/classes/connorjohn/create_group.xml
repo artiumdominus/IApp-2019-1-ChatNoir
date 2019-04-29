@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<new-group>
+  <operacao>
+    <op>new group</op>
+    <groupname>resistance</groupname>
+    <nome>Human Resistance</nome>
+    <tipo>1</tipo>
+    <descricao>Humans and Replicants Resist!</descricao>
+  </operacao>
+</new-group>

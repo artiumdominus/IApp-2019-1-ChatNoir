@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>I'm amelia.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>Got to go. Bye.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Would you like to?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>I don't like to read.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Are you a girl or a boy?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>I like green and orange.</conteudo>
+  </operacao>
+</send-message>

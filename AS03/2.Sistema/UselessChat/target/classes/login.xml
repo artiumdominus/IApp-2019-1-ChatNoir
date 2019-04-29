@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<login>
+  <operacao>
+    <op>login</op>
+    <username>artiumdominus</username>
+    <senha>abc</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>connorjohn</username>
+    <senha>mno</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>connorsarah</username>
+    <senha>jkl</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>iamthebusiness</username>
+    <senha>stu</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>kylereese</username>
+    <senha>ghi</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>major</username>
+    <senha>123</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>mirrorshades</username>
+    <senha>yz0</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>oldbladerunner</username>
+    <senha>pqr</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>ripley</username>
+    <senha>def</senha>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>snake</username>
+    <senha>vwx</senha>
+  </operacao>
+</login>

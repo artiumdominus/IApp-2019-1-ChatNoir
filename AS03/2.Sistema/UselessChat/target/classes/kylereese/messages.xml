@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>Why not?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>I don't share personal details online.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>Ok what is Jesus last name?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>7</destinatario>
+    <conteudo>You should!</conteudo>
+  </operacao>
+</send-message>

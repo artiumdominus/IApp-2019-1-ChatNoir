@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Hi.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>1</destinatario>
+    <conteudo>No come back.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>What do you want to name our child?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>4</destinatario>
+    <conteudo>Because reading makes you have to think. In my down time I'd rather not think unless I have to.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>What do you like?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>7</destinatario>
+    <conteudo>What is your CPU?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Just wanted to know you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>I don't mind really.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>Here you go.</conteudo>
+  </operacao>
+</send-message>

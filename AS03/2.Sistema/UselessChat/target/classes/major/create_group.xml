@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<new-group>
+  <operacao>
+    <op>new group</op>
+    <groupname>section9</groupname>
+    <nome>Section 9</nome>
+    <tipo>0</tipo>
+    <descricao>Public Security Section 9</descricao>
+  </operacao>
+</new-group>

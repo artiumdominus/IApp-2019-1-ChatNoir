@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<add-member>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>connorjohn</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>artiumdominus</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>ripley</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>kylereese</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>connorsarah</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>oldbladerunner</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>iamthebusiness</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>mirrorshades</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>major</username>
+  </operacao>
+</add-member>

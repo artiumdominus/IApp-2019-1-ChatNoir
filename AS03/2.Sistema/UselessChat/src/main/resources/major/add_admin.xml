@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<add-admin>
+  <operacao>
+    <op>add admin</op>
+    <groupname>section9</groupname>
+    <username>major</username>
+  </operacao>
+</add-admin>

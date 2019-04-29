@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<logon>
+  <operacao>
+    <op>logon</op>
+    <username>artiumdominus</username>
+    <senha>abc</senha>
+    <nome>Artium Dominus</nome>
+    <numero-de-telefone>(811) 995-4564</numero-de-telefone>
+    <bio>24 y.o. Software Engineer at SurvCorp inc.</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>connorjohn</username>
+    <senha>mno</senha>
+    <nome>John Connor</nome>
+    <numero-de-telefone>(838) 957-1210</numero-de-telefone>
+    <bio>Human Resistance Leader</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>connorsarah</username>
+    <senha>jkl</senha>
+    <nome>Sarah Connor</nome>
+    <numero-de-telefone>(289) 525-9795</numero-de-telefone>
+    <bio>I'm here just to destroy the fucking SkyNet</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>iamthebusiness</username>
+    <senha>stu</senha>
+    <nome>Rachael Tyrell</nome>
+    <numero-de-telefone>(914) 864-6355</numero-de-telefone>
+    <bio>Secretary at Tyrell Corporation</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>kylereese</username>
+    <senha>ghi</senha>
+    <nome>Kyle Reese</nome>
+    <numero-de-telefone>(843) 520-7977</numero-de-telefone>
+    <bio>Terminator Hunter - Volunteer</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>major</username>
+    <senha>123</senha>
+    <nome>Kusanagi Motoko</nome>
+    <numero-de-telefone>(860) 884-1886</numero-de-telefone>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>mirrorshades</username>
+    <senha>yz0</senha>
+    <nome>Molly Millions</nome>
+    <numero-de-telefone>(338) 761-5166</numero-de-telefone>
+    <bio>› Street Samurai › 5.000 Yen/Hour ›</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>oldbladerunner</username>
+    <senha>pqr</senha>
+    <nome>Rick Deckard</nome>
+    <numero-de-telefone>(536) 418-0948</numero-de-telefone>
+    <bio>Blade Runner at L.A. police departament</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>ripley</username>
+    <senha>def</senha>
+    <nome>Ellen Ripley</nome>
+    <numero-de-telefone>(795) 771-7706</numero-de-telefone>
+    <bio>Alien Hunter - Freelancer</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>snake</username>
+    <senha>vwx</senha>
+    <nome>Snake Plissken</nome>
+    <numero-de-telefone>(834) 335-7123</numero-de-telefone>
+    <bio>I don't give a shit about your war</bio>
+  </operacao>
+</logon>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>That's your name? Should I call you that?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>What is it?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>Where is your data center?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Cool.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>You didn't answer my question</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>What color is your hair?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>b</destinatario>
+    <conteudo>How do you know?</conteudo>
+  </operacao>
+</send-message>

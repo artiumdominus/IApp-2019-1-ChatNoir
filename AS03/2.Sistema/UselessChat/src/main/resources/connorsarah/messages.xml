@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<send-message>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>Yes.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Yay.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>6</destinatario>
+    <conteudo>Because I know everything.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>What kind of tea is it?</conteudo>
+  </operacao>
+</send-message>

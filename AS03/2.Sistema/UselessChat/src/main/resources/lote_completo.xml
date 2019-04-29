@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lote>
+  <operacao>
+    <op>logon</op>
+    <username>artiumdominus</username>
+    <senha>abc</senha>
+    <nome>Artium Dominus</nome>
+    <numero-de-telefone>(811) 995-4564</numero-de-telefone>
+    <bio>24 y.o. Software Engineer at SurvCorp inc.</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>connorjohn</username>
+    <senha>mno</senha>
+    <nome>John Connor</nome>
+    <numero-de-telefone>(838) 957-1210</numero-de-telefone>
+    <bio>Human Resistance Leader</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>connorsarah</username>
+    <senha>jkl</senha>
+    <nome>Sarah Connor</nome>
+    <numero-de-telefone>(289) 525-9795</numero-de-telefone>
+    <bio>I'm here just to destroy the fucking SkyNet</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>iamthebusiness</username>
+    <senha>stu</senha>
+    <nome>Rachael Tyrell</nome>
+    <numero-de-telefone>(914) 864-6355</numero-de-telefone>
+    <bio>Secretary at Tyrell Corporation</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>kylereese</username>
+    <senha>ghi</senha>
+    <nome>Kyle Reese</nome>
+    <numero-de-telefone>(843) 520-7977</numero-de-telefone>
+    <bio>Terminator Hunter - Volunteer</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>major</username>
+    <senha>123</senha>
+    <nome>Kusanagi Motoko</nome>
+    <numero-de-telefone>(860) 884-1886</numero-de-telefone>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>mirrorshades</username>
+    <senha>yz0</senha>
+    <nome>Molly Millions</nome>
+    <numero-de-telefone>(338) 761-5166</numero-de-telefone>
+    <bio>› Street Samurai › 5.000 Yen/Hour ›</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>oldbladerunner</username>
+    <senha>pqr</senha>
+    <nome>Rick Deckard</nome>
+    <numero-de-telefone>(536) 418-0948</numero-de-telefone>
+    <bio>Blade Runner at L.A. police departament</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>ripley</username>
+    <senha>def</senha>
+    <nome>Ellen Ripley</nome>
+    <numero-de-telefone>(795) 771-7706</numero-de-telefone>
+    <bio>Alien Hunter - Freelancer</bio>
+  </operacao>
+  <operacao>
+    <op>logon</op>
+    <username>snake</username>
+    <senha>vwx</senha>
+    <nome>Snake Plissken</nome>
+    <numero-de-telefone>(834) 335-7123</numero-de-telefone>
+    <bio>I don't give a shit about your war</bio>
+  </operacao>
+   <operacao>
+    <op>login</op>
+    <username>connorjohn</username>
+    <senha>mno</senha>
+  </operacao>
+  <operacao>
+    <op>new group</op>
+    <groupname>resistance</groupname>
+    <nome>Human Resistance</nome>
+    <tipo>1</tipo>
+    <descricao>Humans and Replicants Resist!</descricao>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>artiumdominus</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>ripley</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>kylereese</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>connorsarah</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>oldbladerunner</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>iamthebusiness</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>mirrorshades</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>resistance</groupname>
+    <username>major</username>
+  </operacao>
+  <operacao>
+    <op>add admin</op>
+    <groupname>resistance</groupname>
+    <username>connorsarah</username>
+  </operacao>
+  <operacao>
+    <op>add admin</op>
+    <groupname>resistance</groupname>
+    <username>kylereese</username>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>major</username>
+    <senha>123</senha>
+  </operacao>
+  <operacao>
+    <op>new group</op>
+    <groupname>section9</groupname>
+    <nome>Section 9</nome>
+    <tipo>0</tipo>
+    <descricao>Public Security Section 9</descricao>
+  </operacao>
+    <operacao>
+    <op>add member</op>
+    <groupname>section9</groupname>
+    <username>artiumdominus</username>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>ripley</username>
+    <senha>def</senha>
+  </operacao>
+  <operacao>
+    <op>new group</op>
+    <groupname>bountyhunters</groupname>
+    <nome>Bounty Hunters</nome>
+    <tipo>0</tipo>
+    <descricao>Hunters Association</descricao>
+  </operacao>
+   <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>kylereese</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>connorsarah</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>snake</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>mirrorshades</username>
+  </operacao>
+  <operacao>
+    <op>add member</op>
+    <groupname>bountyhunters</groupname>
+    <username>mirrorshades</username>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>artiumdominus</username>
+    <senha>abc</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Me either</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>No that's my name.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>Many things.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>I don't know you are wrong.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>4</destinatario>
+    <conteudo>No, thank you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>I don't know.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>I have not tried thoughs before.</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>connorjohn</username>
+    <senha>mno</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>Hello, who are you?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>I don't want to tell you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>1</destinatario>
+    <conteudo>What?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>But we will.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>That's good.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>I like sweet tea.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>So what do you wanto to talk about?</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>connorsarah</username>
+    <senha>jkl</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>Yes.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Yay.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>6</destinatario>
+    <conteudo>Because I know everything.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>What kind of tea is it?</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>iamthebusiness</username>
+    <senha>stu</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>7</destinatario>
+    <conteudo>What are you doing?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>b</destinatario>
+    <conteudo>Alright, my name is John.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>6</destinatario>
+    <conteudo>I will, so don't worry.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>My name is ragnar.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>Why should I tell you that?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Okay.</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>kylereese</username>
+    <senha>ghi</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>Why not?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>I don't share personal details online.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>Ok what is Jesus last name?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>7</destinatario>
+    <conteudo>You should!</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>major</username>
+    <senha>123</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>That's your name? Should I call you that?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>What is it?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>Where is your data center?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Cool.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>You didn't answer my question</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>What color is your hair?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>b</destinatario>
+    <conteudo>How do you know?</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>mirrorshades</username>
+    <senha>yz0</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Hi.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>1</destinatario>
+    <conteudo>No come back.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>What do you want to name our child?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>4</destinatario>
+    <conteudo>Because reading makes you have to think. In my down time I'd rather not think unless I have to.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>What do you like?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>7</destinatario>
+    <conteudo>What is your CPU?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Just wanted to know you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>I don't mind really.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>Here you go.</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>oldbladerunner</username>
+    <senha>pqr</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>3</destinatario>
+    <conteudo>We don't have kids silly.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>I don't even know you.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>What's your favorite book?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>b</destinatario>
+    <conteudo>I don't have hair</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>4</destinatario>
+    <conteudo>What's your favorite color?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>6</destinatario>
+    <conteudo>Blue, What about you?</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>ripley</username>
+    <senha>def</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>I don't know</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>1</destinatario>
+    <conteudo>I told you mine.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>c</destinatario>
+    <conteudo>Never mind, bye.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>8</destinatario>
+    <conteudo>Your what?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>9</destinatario>
+    <conteudo>Want to be my girlfriend.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>Yes I guess.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>a</destinatario>
+    <conteudo>Would you like some water?</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+  <operacao>
+    <op>login</op>
+    <username>snake</username>
+    <senha>vwx</senha>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>I'm amelia.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>5</destinatario>
+    <conteudo>Got to go. Bye.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Would you like to?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>0</destinatario>
+    <conteudo>I don't like to read.</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>Are you a girl or a boy?</conteudo>
+  </operacao>
+  <operacao>
+    <op>send</op>
+    <destinatario>2</destinatario>
+    <conteudo>I like green and orange.</conteudo>
+  </operacao>
+  <operacao>
+    <op>logout</op>
+  </operacao>
+</lote>
