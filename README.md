@@ -1,3 +1,4 @@
+
 # IApp-2019-1-UselessChat
 Trabalho da disciplina de Integração de Aplicações
 
@@ -35,27 +36,29 @@ Serviço de mensagens
 * --
 
 ## Manual da API RESTful:
-As requisições deversão ser feitas para diretórios de um determinado endereço que por hora vamos chamar de **host/**
+As requisições deverão ser feitas para diretórios de um determinado endereço que por hora vamos chamar de **host/**
 
-### Login / Logout ‹ api/log/ ›
+### Login / Logout ( api/log/ )
 Para realizar algumas das operações é necessário estar logado. Para isto é necessário realizar a operação de login e obter um token que deverá ser utilizado para se identificar nestas operações restritas. Também pode ser pedido um novo token (relog) ou a destruição do token (logout) para se garantir que operações não serão feitas em seu nome até o próximo login.
 
-#### Login: POST » **host**/api/log/
-input:
+Login: POST » **host**/api/log/
+*input:*
 ```json
 {
     "username": "username",
     "password": "xxxxxxxxxxxx",
 }
 ```
-resposta:
+*resposta:*
 ```json
 {
     "token": "##############################",
 }
 ```
-#### Relog: PUT » **host**/api/log/
-input:
+<br>
+
+Relog: PUT » **host**/api/log/
+*input:*
 ```json
 {
     "username": "username",
@@ -63,24 +66,68 @@ input:
     "token": "##############################",
 }
 ```
-resposta:
+<br>
+
+*resposta:*
 ```json
 {
     "oldtoken": "##############################",
     "newtoken": "##############################",
 }
 ```
-#### Logout: DELETE » **host**/api/log/
-input:
+<br>
+
+ Logout: DELETE » **host**/api/log/
+*input:*
 ```json
 {
     "token": "##############################",
 }
 ```
-resposta:
+*resposta:*
 ```json
 {
     "username": "username",
     "deletedtoken": "##############################",
 }
 ```
+
+### Person ( api/persons/ )
+
+GET » **host**/api/persons/
+GET » **host**/api/persons/{id}/
+POST » **host**/api/persons/
+PUT » **host**/api/persons/{id}/
+DELETE » **host**/api/persons/{id}/
+
+### Group ( api/groups/ )
+
+GET » **host**/api/groups/
+GET » **host**/api/groups/{id}/
+POST » **host**/api/groups/
+PUT » **host**/api/groups/{id}/
+DELETE » **host**/api/groups/{id}/
+
+### Membership ( api/memberships/ )
+
+GET » **host**/api/memberships/
+GET » **host**/api/memberships/{id}/
+POST » **host**/api/memberships/
+PUT » **host**/api/memberships/{id}/
+DELETE » **host**/api/memberships/{id}/
+
+### Message ( api/messages/ )
+
+GET » **host**/api/memberships/
+GET » **host**/api/memberships/{id}/
+POST » **host**/api/memberships/
+PUT » **host**/api/memberships/{id}/
+DELETE » **host**/api/memberships/{id}/
+
+### Chat ( api/chats/ )
+
+GET » **host**/api/memberships/
+GET » **host**/api/memberships/{id}/
+POST » **host**/api/memberships/
+PUT » **host**/api/memberships/{id}/
+DELETE » **host**/api/memberships/{id}/
