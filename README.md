@@ -29,5 +29,58 @@ Serviço de mensagens
 * O sistema deve permitir um usuário entrar em um grupo público.
 
 ### AS03
+* --
 
 ### AS04
+* --
+
+## Manual da API RESTful:
+As requisições deversão ser feitas para diretórios de um determinado endereço que por hora vamos chamar de **host/**
+
+### Login / Logout ‹ api/log/ ›
+Para realizar algumas das operações é necessário estar logado. Para isto é necessário realizar a operação de login e obter um token que deverá ser utilizado para se identificar nestas operações restritas. Também pode ser pedido um novo token (relog) ou a destruição do token (logout) para se garantir que operações não serão feitas em seu nome até o próximo login.
+
+#### Login: POST » **host**/api/log/
+input:
+```json
+{
+    "username": "username",
+    "password": "xxxxxxxxxxxx",
+}
+```
+resposta:
+```json
+{
+    "token": "##############################",
+}
+```
+#### Relog: PUT » **host**/api/log/
+input:
+```json
+{
+    "username": "username",
+    "password": "xxxxxxxxxxxx",
+    "token": "##############################",
+}
+```
+resposta:
+```json
+{
+    "oldtoken": "##############################",
+    "newtoken": "##############################",
+}
+```
+#### Logout: DELETE » **host**/api/log/
+input:
+```json
+{
+    "token": "##############################",
+}
+```
+resposta:
+```json
+{
+    "username": "username",
+    "deletedtoken": "##############################",
+}
+```
