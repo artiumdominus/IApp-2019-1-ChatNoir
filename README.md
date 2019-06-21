@@ -1,5 +1,5 @@
 
-# IApp-2019-1-UselessChat
+# IApp-2019-1-ChatNoir
 Trabalho da disciplina de Integração de Aplicações
 
 ## Equipe:
@@ -95,40 +95,40 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 
 ### Person ( api/persons/ )
 
-- GET » **host**/api/persons/
-- GET » **host**/api/persons/{id}/
-- POST » **host**/api/persons/
-- PUT » **host**/api/persons/{id}/
-- DELETE » **host**/api/persons/{id}/
+- GET » **host**/api/persons/ : Obtém uma lista de usuários do Chat Noir
+- GET » **host**/api/persons/{id}/ : Obtém informações de um usuário específico
+- POST » **host**/api/persons/ : Logon (Cria uma conta no Chat Noir)
+- PUT » **host**/api/persons/{id}/ : Atualiza informações de perfil
+- DELETE » **host**/api/persons/{id}/ : Exclui a sua conta
 
 ### Group ( api/groups/ )
 
-- GET » **host**/api/groups/
-- GET » **host**/api/groups/{id}/
-- POST » **host**/api/groups/
-- PUT » **host**/api/groups/{id}/
-- DELETE » **host**/api/groups/{id}/
+- GET » **host**/api/groups/ : Obtém uma lista de grupos públicos ou que o usuário logado participe
+- GET » **host**/api/groups/{id}/ : Obtém informações sobre um grupo específico
+- POST » **host**/api/groups/ : Cria um grupo
+- PUT » **host**/api/groups/{id}/ : Atualiza as informações do grupo
+- DELETE » **host**/api/groups/{id}/ : Exclui grupo
 
 ### Membership ( api/memberships/ )
 
-- GET » **host**/api/memberships/
-- GET » **host**/api/memberships/{id}/
-- POST » **host**/api/memberships/
-- PUT » **host**/api/memberships/{id}/
-- DELETE » **host**/api/memberships/{id}/
+- GET » **host**/api/memberships/ : Obtém uma lista de participações em grupos públicos
+- GET » **host**/api/memberships/{id}/ : Obtém uma participação específica
+- POST » **host**/api/memberships/ : Adiciona um membro a um grupo, ou entra em um grupo público
+- PUT » **host**/api/memberships/{id}/ : Promove um membro a administrador ou rebaixa a membro coum
+- DELETE » **host**/api/memberships/{id}/ : Remove um membro de um grupo
 
 ### Message ( api/messages/ )
 
-- GET » **host**/api/memberships/
-- GET » **host**/api/memberships/{id}/
-- POST » **host**/api/memberships/
-- PUT » **host**/api/memberships/{id}/
-- DELETE » **host**/api/memberships/{id}/
+- GET » **host**/api/messages/ : Obtém uma lista de mensagens
+- GET » **host**/api/messsages/{id}/ : Obtém informações de uma mensagem específica
+- POST » **host**/api/messages/ : Envia uma mensagem
+- PUT » **host**/api/messages/{id}/ : Edita uma mensagem
+- DELETE » **host**/api/messages/{id}/ : Exclui uma mensagem
 
 ### Chat ( api/chats/ )
 
-- GET » **host**/api/memberships/
-- GET » **host**/api/memberships/{id}/
-- POST » **host**/api/memberships/
-- PUT » **host**/api/memberships/{id}/
-- DELETE » **host**/api/memberships/{id}/
+- GET » **host**/api/chats/ : Funcionalidade inútil
+- GET » **host**/api/chats/{id}/ : Funcionalidade inútil
+- POST » **host**/api/chats/ : Funcionalidade inútil
+- PUT » **host**/api/chats/{id}/ : Funcionalidade inútil
+- DELETE » **host**/api/chats/{id}/ : Funcionalidade inútil
