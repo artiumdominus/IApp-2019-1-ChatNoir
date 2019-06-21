@@ -101,6 +101,16 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/persons/{id}/ : Atualiza informações de perfil
 - DELETE » **host**/api/persons/{id}/ : Exclui a sua conta
 
+| Campos          | Tipo   | input | ouput | null | update |
+|-----------------|--------|:-----:|:-----:|:----:|:------:|
+| id              | int    |       |   ×   |      |        |
+| name            | string |   ×   |   ×   |      |    ×   |
+| username        | string |   ×   |   ×   |      |    ×   |
+| password        | string |   ×   |       |      |    ×   |
+| telephoneNumber | string |   ×   |   ×   |      |    ×   |
+| bio             | string |   ×   |   ×   |   ×  |    ×   |
+| address         | int    |       |   ×   |      |        |
+
 ### Group ( api/groups/ )
 
 - GET » **host**/api/groups/ : Obtém uma lista de grupos públicos ou que o usuário logado participe
@@ -108,6 +118,17 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - POST » **host**/api/groups/ : Cria um grupo
 - PUT » **host**/api/groups/{id}/ : Atualiza as informações do grupo
 - DELETE » **host**/api/groups/{id}/ : Exclui grupo
+
+| Campos      | Tipo          | input | ouput | null | update |
+|-------------|---------------|:-----:|:-----:|:----:|:------:|
+| id          | int           |       |   ×   |      |        |
+| name        | string        |   ×   |   ×   |      |    ×   |
+| groupname   | string        |   ×   |   ×   |      |    ×   |
+| description | string        |   ×   |       |   ×  |    ×   |
+| type        | string        |   ×   |   ×   |      |    ×   |
+| address     | int           |       |   ×   |      |        |
+| creator     | string        |       |   ×   |      |        |
+| members     | array<string> |       |   ×   |      |        |
 
 ### Membership ( api/memberships/ )
 

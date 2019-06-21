@@ -54,7 +54,7 @@ class ChatResource(DjangoResource):
 		except Chat.DoesNotExist:
 			chat = Chat()
 
-		chat.background_color = self.data['background_color'],
+		chat.background_color = self.data['background_color']
 		chat.text_color = self.data['text_color']
 		chat.save()
 		
@@ -177,7 +177,7 @@ class GroupResource(DjangoResource):
 				name = self.data['name'],
 				groupname = self.data['groupname'],
 				description = self.data['description'],
-				grouptype = self.data['grouptype'],
+				grouptype = self.data['type'],
 				address = Chat.objects.create(),
 				creator = Person.objects.get(id=1) # Corrigir
 			)
@@ -192,7 +192,7 @@ class GroupResource(DjangoResource):
 			group.name = self.data['name']
 			group.groupname = self.data['groupname']
 			group.description = self.data['description']
-			group.grouptype = self.data['grouptype']
+			group.grouptype = self.data['type']
 			group.creator = Person.objects.get(id=1) # Corrigir
 			group.save()
 			
