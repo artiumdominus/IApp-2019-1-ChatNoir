@@ -125,10 +125,12 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 | name        | string        |   ×   |   ×   |      |    ×   |
 | groupname   | string        |   ×   |   ×   |      |    ×   |
 | description | string        |   ×   |       |   ×  |    ×   |
-| type        | string        |   ×   |   ×   |      |    ×   |
+| type*       | string        |   ×   |   ×   |      |    ×   |
 | address     | int           |       |   ×   |      |        |
 | creator     | string        |       |   ×   |      |        |
 | members     | array<string> |       |   ×   |      |        |
+
+*type can hold two possible values: "public" & "private"
 
 ### Membership ( api/memberships/ )
 
@@ -138,13 +140,29 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/memberships/{id}/ : Promove um membro a administrador ou rebaixa a membro coum
 - DELETE » **host**/api/memberships/{id}/ : Remove um membro de um grupo
 
+| Campos | Tipo           | input | ouput | create | update |
+|--------|----------------|:-----:|:-----:|:------:|:------:|
+| id     | int            |       |   ×   |        |        |
+| group  | → int/string → |   ×   |   ×   |    ×   |    ×   |
+| person | → int/string → |   ×   |   ×   |    ×   |    ×   |
+| admin  | boolean        |   ×   |   ×   |        |    ×   |
+
 ### Message ( api/messages/ )
 
 - GET » **host**/api/messages/ : Obtém uma lista de mensagens
 - GET » **host**/api/messsages/{id}/ : Obtém informações de uma mensagem específica
 - POST » **host**/api/messages/ : Envia uma mensagem
-- PUT » **host**/api/messages/{id}/ : Edita uma mensagem
+- PUT » **host**/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado
 - DELETE » **host**/api/messages/{id}/ : Exclui uma mensagem
+
+| Campos   | Tipo     | input | ouput | create | update |
+|----------|----------|:-----:|:-----:|:------:|:------:|
+| id       | int      |       |   ×   |        |        |
+| content  | string   |   ×   |   ×   |    ×   |    ×   |
+| dispatch | datetime |       |   ×   |        |        |
+| emitter  | string   |       |   ×   |        |        |
+| receptor | id       |       |   ×   |        |        |
+| status   | string   |   ×   |   ×   |        |    ×   |
 
 ### Chat ( api/chats/ )
 
@@ -153,3 +171,9 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - POST » **host**/api/chats/ : Funcionalidade inútil
 - PUT » **host**/api/chats/{id}/ : Funcionalidade inútil
 - DELETE » **host**/api/chats/{id}/ : Funcionalidade inútil
+
+| Campos           | Tipo     | input | ouput | null | update |
+|------------------|----------|:-----:|:-----:|:----:|:------:|
+| id               | int      |       |   ×   |      |        |
+| background_color | string   |   ×   |   ×   |   ×  |    ×   |
+| text_color       | datetime |   ×   |   ×   |   ×  |    ×   |
