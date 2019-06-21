@@ -123,7 +123,7 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 | id          | int                |       |   ×   |      |        |
 | name        | string (len ≤ 200) |   ×   |   ×   |      |    ×   |
 | groupname   | string (len ≤ 70)  |   ×   |   ×   |      |    ×   |
-| description | string (len ≤ 70)  |   ×   |       |   ×  |    ×   |
+| description | string (len ≤ 70)  |   ×   |   ×   |   ×  |    ×   |
 | type*       | string             |   ×   |   ×   |      |    ×   |
 | address     | int                |       |   ×   |      |        |
 | creator     | string             |       |   ×   |      |        |
