@@ -1,4 +1,3 @@
-
 # IApp-2019-1-ChatNoir
 Trabalho da disciplina de Integração de Aplicações
 
@@ -101,15 +100,15 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/persons/{id}/ : Atualiza informações de perfil
 - DELETE » **host**/api/persons/{id}/ : Exclui a sua conta
 
-| Campos          | Tipo   | input | ouput | null | update |
-|-----------------|--------|:-----:|:-----:|:----:|:------:|
-| id              | int    |       |   ×   |      |        |
-| name            | string |   ×   |   ×   |      |    ×   |
-| username        | string |   ×   |   ×   |      |    ×   |
-| password        | string |   ×   |       |      |    ×   |
-| telephoneNumber | string |   ×   |   ×   |      |    ×   |
-| bio             | string |   ×   |   ×   |   ×  |    ×   |
-| address         | int    |       |   ×   |      |        |
+| Campos          | Tipo               | input | ouput | null | update |
+|-----------------|--------------------|:-----:|:-----:|:----:|:------:|
+| id              | int                |       |   ×   |      |        |
+| name            | string (len ≤ 200) |   ×   |   ×   |      |    ×   |
+| username        | string (len ≤ 70)  |   ×   |   ×   |      |    ×   |
+| password        | string (len ≤ 20)  |   ×   |       |      |    ×   |
+| telephoneNumber | string (len ≤ 70)  |   ×   |   ×   |      |    ×   |
+| bio             | string             |   ×   |   ×   |   ×  |    ×   |
+| address         | int                |       |   ×   |      |        |
 
 ### Group ( api/groups/ )
 
@@ -119,16 +118,16 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/groups/{id}/ : Atualiza as informações do grupo
 - DELETE » **host**/api/groups/{id}/ : Exclui grupo
 
-| Campos      | Tipo          | input | ouput | null | update |
-|-------------|---------------|:-----:|:-----:|:----:|:------:|
-| id          | int           |       |   ×   |      |        |
-| name        | string        |   ×   |   ×   |      |    ×   |
-| groupname   | string        |   ×   |   ×   |      |    ×   |
-| description | string        |   ×   |       |   ×  |    ×   |
-| type*       | string        |   ×   |   ×   |      |    ×   |
-| address     | int           |       |   ×   |      |        |
-| creator     | string        |       |   ×   |      |        |
-| members     | array<string> |       |   ×   |      |        |
+| Campos      | Tipo               | input | ouput | null | update |
+|-------------|--------------------|:-----:|:-----:|:----:|:------:|
+| id          | int                |       |   ×   |      |        |
+| name        | string (len ≤ 200) |   ×   |   ×   |      |    ×   |
+| groupname   | string (len ≤ 70)  |   ×   |   ×   |      |    ×   |
+| description | string (len ≤ 70)  |   ×   |       |   ×  |    ×   |
+| type*       | string             |   ×   |   ×   |      |    ×   |
+| address     | int                |       |   ×   |      |        |
+| creator     | string             |       |   ×   |      |        |
+| members     | array<string>      |       |   ×   |      |        |
 
 *type can hold two possible values: "public" & "private"
 
@@ -155,14 +154,17 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado
 - DELETE » **host**/api/messages/{id}/ : Exclui uma mensagem
 
-| Campos   | Tipo     | input | ouput | create | update |
-|----------|----------|:-----:|:-----:|:------:|:------:|
-| id       | int      |       |   ×   |        |        |
-| content  | string   |   ×   |   ×   |    ×   |    ×   |
-| dispatch | datetime |       |   ×   |        |        |
-| emitter  | string   |       |   ×   |        |        |
-| receptor | id       |       |   ×   |        |        |
-| status   | string   |   ×   |   ×   |        |    ×   |
+| Campos   | Tipo                | input | ouput | create | update |
+|----------|---------------------|:-----:|:-----:|:------:|:------:|
+| id       | int                 |       |   ×   |        |        |
+| content  | string (len ≤ 1000) |   ×   |   ×   |    ×   |    ×   |
+| dispatch | datetime            |       |   ×   |        |        |
+| emitter  | string              |       |   ×   |        |        |
+| receptor | id                  |       |   ×   |        |        |
+| status*  | string              |   ×   |   ×   |        |    ×   |
+
+*status can hold four possible values: "Rascunho" → "Enviado" → "Entregue" → "Visualizado"
+you can only set a new value for status that is foward from the old one.
 
 ### Chat ( api/chats/ )
 
@@ -172,8 +174,10 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/chats/{id}/ : Funcionalidade inútil
 - DELETE » **host**/api/chats/{id}/ : Funcionalidade inútil
 
-| Campos           | Tipo     | input | ouput | null | update |
-|------------------|----------|:-----:|:-----:|:----:|:------:|
-| id               | int      |       |   ×   |      |        |
-| background_color | string   |   ×   |   ×   |   ×  |    ×   |
-| text_color       | datetime |   ×   |   ×   |   ×  |    ×   |
+| Campos           | Tipo              | input | ouput | null | update |
+|------------------|-------------------|:-----:|:-----:|:----:|:------:|
+| id               | int               |       |   ×   |      |        |
+| background_color | string (len ≤ 20) |   ×   |   ×   |   ×  |    ×   |
+| text_color       | string (len ≤ 20) |   ×   |   ×   |   ×  |    ×   |
+
+background_color & text_color must be CSS color names.
