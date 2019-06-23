@@ -149,7 +149,7 @@ class PersonResource(DjangoResource):
 				raise Warning('You just can update your own account' + '\n' +
 					'You: ' + str(session.user.id) + ' Target: ' + str(pk))
 		except:
-			raise Warning('Wrong token')
+			raise Warning('Wrong token') # Este try-except pode dar bug ao tentar lançar o Warning interno.
 
 	# DELETE /api/persons/<pk>/
 	def delete(self, pk):
@@ -182,14 +182,14 @@ class GroupResource(DjangoResource):
 
 	def is_authenticated(self):
 		try:
-			self.session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+			session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
 			return True
 		except:
 			return False
 
 	# GET /api/groups/
 	def list(self):
-		return Group.objects.filter(grouptype='0')
+		return Group.objects.filter(grouptype='0') # Adicionar grupos que o usuário logado participa
 	
 	# GET /api/groups/<pk>/
 	def detail(self, pk):
@@ -202,51 +202,57 @@ class GroupResource(DjangoResource):
 	# POST /api/groups/
 	def create(self):
 		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
-		return Group.objects.create(
-				name = self.data['name'],
-				groupname = self.data['groupname'],
-				description = self.data['description'],
-				grouptype = self.data['type'],
-				address = Chat.objects.create(),
-				creator = session.user
-			)
+		group = Group.objects.create(
+			name = self.data['name'],
+			groupname = self.data['groupname'],
+			description = self.data['description'],
+			grouptype = self.data['type'],
+			address = Chat.objects.create(),
+			creator = session.user
+		)
+		
+		Membership.objects.create(
+			group = group,
+			person = session.user,
+			admin = True
+		)
+		
+		return group
 
 	# PUT /api/groups/<pk>/
 	def update(self, pk):
 		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
 		try:
 			group = Group.objects.get(id=pk)
-			
-			if session.user == group.creator:
-				group.name = self.data['name']
-				group.groupname = self.data['groupname']
-				group.description = self.data['description']
-				group.grouptype = self.data['type']
-				group.save()
-				
-				return group
-			else:
-				raise Warning('You have no permission to update this group')
-			
 		except:
 			raise Warning('The group you are trying to update does not exist')
+		
+		if session.user == group.creator:
+			group.name = self.data['name']
+			group.groupname = self.data['groupname']
+			group.description = self.data['description']
+			group.grouptype = self.data['type']
+			group.save()
+			
+			return group
+		else:
+			raise Warning('You have no permission to update this group')
 
 	# DELETE /api/groups/<pk>/
 	def delete(self, pk):
 		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
 		try:
 			group = Group.objects.get(id=pk)
-			
-			if session.user == group.creator:
-				group.delete()
-				
-				return group
-			else:
-				raise Warning('You have no permission to delete this group')
-		
 		except:
 			raise Warning('The group you are trying to delete does not exist')
-	
+
+		if session.user == group.creator:
+			group.address.delete()
+
+			return group
+		else:
+			raise Warning('You have no permission to delete this group')
+
 	def is_debug(self):
 		return False
 
