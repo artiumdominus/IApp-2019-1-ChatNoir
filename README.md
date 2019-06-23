@@ -57,14 +57,13 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 ```
 <br>
 
-- Relog: PUT » **host**/api/log/
+- Relog: PUT » **host**/api/log/ !(Não implementado)
 
 *input:*
 ```json
 {
     "username": "username",
     "password": "xxxxxxxxxxxx",
-    "token": "##############################",
 }
 ```
 *resposta:*
@@ -76,14 +75,8 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 ```
 <br>
 
-- Logout: DELETE » **host**/api/log/
+- Logout: DELETE » **host**/api/log/ !(Não implementado)
 
-*input:*
-```json
-{
-    "token": "##############################",
-}
-```
 *resposta:*
 ```json
 {
@@ -139,12 +132,12 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/memberships/{id}/ : Promove um membro a administrador ou rebaixa a membro coum
 - DELETE » **host**/api/memberships/{id}/ : Remove um membro de um grupo
 
-| Campos | Tipo           | input | ouput | create | update |
-|--------|----------------|:-----:|:-----:|:------:|:------:|
-| id     | int            |       |   ×   |        |        |
-| group  | → int/string → |   ×   |   ×   |    ×   |    ×   |
-| person | → int/string → |   ×   |   ×   |    ×   |    ×   |
-| admin  | boolean        |   ×   |   ×   |        |    ×   |
+| Campos | Tipo           | create | ouput | update |
+|--------|----------------|:------:|:-----:|:------:|
+| id     | int            |        |   ×   |        |
+| group  | → int/string → |    ×   |   ×   |    ×   |
+| person | → int/string → |    ×   |   ×   |    ×   |
+| admin  | boolean        |        |   ×   |    ×   |
 
 ### Message ( api/messages/ )
 
@@ -154,14 +147,14 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado
 - DELETE » **host**/api/messages/{id}/ : Exclui uma mensagem
 
-| Campos   | Tipo                | input | ouput | create | update |
-|----------|---------------------|:-----:|:-----:|:------:|:------:|
-| id       | int                 |       |   ×   |        |        |
-| content  | string (len ≤ 1000) |   ×   |   ×   |    ×   |    ×   |
-| dispatch | datetime            |       |   ×   |        |        |
-| emitter  | string              |       |   ×   |        |        |
-| receptor | id                  |       |   ×   |        |        |
-| status*  | string              |   ×   |   ×   |        |    ×   |
+| Campos   | Tipo                | create | ouput | update |
+|----------|---------------------|:------:|:-----:|:------:|
+| id       | int                 |        |   ×   |        |
+| content  | string (len ≤ 1000) |    ×   |   ×   |    ×   |
+| dispatch | datetime            |        |   ×   |        |
+| emitter  | string              |        |   ×   |        |
+| receptor | id                  |        |   ×   |        |
+| status*  | string              |        |   ×   |    ×   |
 
 *status can hold four possible values: "Rascunho" → "Enviado" → "Entregue" → "Visualizado"
 you can only set a new value for status that is foward from the old one.

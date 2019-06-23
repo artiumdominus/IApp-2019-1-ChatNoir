@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 
-from chat.api import ChatResource, PersonResource, GroupResource, MembershipResource, MessageResource
+from chat.api import ChatResource, PersonResource, GroupResource, MembershipResource, MessageResource, Log
 
 urlpatterns = [
 	# path -> 'admin/'
@@ -28,4 +28,5 @@ urlpatterns = [
     path(r'api/groups/', include(GroupResource.urls())),
 	path(r'api/memberships/', include(MembershipResource.urls())),
 	path(r'api/messages/', include(MessageResource.urls())),
+	path(r'api/log/', include(Log.urls())),
 ]

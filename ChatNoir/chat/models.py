@@ -57,4 +57,8 @@ class Message(models.Model):
 	
 	def __str__(self):
 		return "Message #" + str(self.id)
+	
+class Session(models.Model):
+	user = models.ForeignKey(Person, on_delete=models.CASCADE)
+	token = models.CharField(max_length=44)
 

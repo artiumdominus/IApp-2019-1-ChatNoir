@@ -5,9 +5,11 @@ from restless.dj import DjangoResource
 from restless.preparers import FieldsPreparer, CollectionSubPreparer
 from restless.resources import skip_prepare
 
-from .models import Chat, Person, Group, Membership, Message
+from .models import Chat, Person, Group, Membership, Message, Session
 
 from datetime import datetime
+
+import secrets
 
 class ChatResource(DjangoResource):
 	preparer = FieldsPreparer(fields={
@@ -290,3 +292,50 @@ class MessageResource(DjangoResource):
 	# DELETE /api/messages/<pk>/
 	def delete(self, pk):
 		Message.objects.get(id=pk).delete()
+
+class Log(DjangoResource):
+	
+	def is_authenticated(self):
+		return True
+	
+	# POST /api/log/
+	def create(self):
+		username = self.data['username']
+		password = self.data['password']
+		
+		person = Person.objects.get(username=username)
+		
+		if person.password == password:
+			token = secrets.token_urlsafe()
+			Session.objects.create(user = person, token = token)
+			return {'token':token}
+		else:
+			return {'error':'Wrong password'}
+		
+	# PUT /api/log/x/
+	def update(self, pk):
+		username = self.data['username']
+		password = self.data['password']
+		oldtoken = self.request.META.get('HTTP_TOKEN')
+		
+		person = Person.objects.get(username=username)
+		
+		if person.password == password:
+			session = Session.objects.get(user=person, token=oldtoken)
+			newtoken = secrets.token_urlsafe()
+			session.token = newtoken
+			session.save()
+			return {'oldtoken': oldtoken, 'newtoken': newtoken}
+		else:
+			return {'error':'Wrong password'}
+	
+	# DELETE /api/log/x/
+	def delete(self, pk):
+		token = self.request.META.get('HTTP_TOKEN')
+		
+		session = Session.objects.get(token=token)
+		user = session.user
+		session.delete()
+		
+		return {'username': user.username, 'deletedtoken': token}
+	
