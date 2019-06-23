@@ -103,7 +103,14 @@ class PersonResource(DjangoResource):
 		})
 
 	def is_authenticated(self):
-		return False;
+		if self.endpoint in ('list', 'detail', 'create'):
+			return True
+		else:
+			try:
+				self.session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+				return True
+			except:
+				return False
 
 	# GET /api/persons/
 	def list(self):
@@ -127,23 +134,34 @@ class PersonResource(DjangoResource):
 	# PUT /api/persons/<pk>/
 	def update(self, pk):
 		try:
-			person = Person.objects.get(id=pk)
+			session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+			if str(session.user.id) == pk:
+				person = session.user
+				person.name = self.data['name']
+				person.username = self.data['username']
+				person.password = self.data['password']
+				person.telephoneNumber = self.data['telephoneNumber']
+				person.bio = self.data['bio']
+				person.save()
+				
+				return person
+			else:
+				raise Warning('You just can update your own account' + '\n' +
+					'You: ' + str(session.user.id) + ' Target: ' + str(pk))
 		except:
-			person = Person(address=Chat.objects.create())
-
-		person.name = self.data['name']
-		person.username = self.data['username']
-		person.password = self.data['password']
-		person.telephoneNumber = self.data['telephoneNumber']
-		person.bio = self.data['bio']
-		person.save()
-		
-		return person
+			raise Warning('Wrong token')
 
 	# DELETE /api/persons/<pk>/
 	def delete(self, pk):
-		person = Person.objects.get(id=pk)
-		person.address.delete()
+		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+		if str(session.user.id) == pk:
+			person = Person.objects.get(id=pk)
+			person.address.delete()
+		else:
+			raise Warning('You just can delete your own account')
+		
+	def is_debug(self):
+		return False
 
 class GroupResource(DjangoResource):
 	member_preparer = FieldsPreparer(fields={
@@ -163,46 +181,71 @@ class GroupResource(DjangoResource):
 		})
 
 	def is_authenticated(self):
-		return False
+		try:
+			self.session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+			return True
+		except:
+			return False
 
 	# GET /api/groups/
 	def list(self):
-		return Group.objects.all()
+		return Group.objects.filter(grouptype='0')
 	
 	# GET /api/groups/<pk>/
 	def detail(self, pk):
-		return Group.objects.get(id=pk)
+		group = Group.objects.get(id=pk)
+		if group.grouptype == '0':
+			return group
+		else:
+			raise Warning('The group you are trying to access is private')
 
 	# POST /api/groups/
 	def create(self):
+		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
 		return Group.objects.create(
 				name = self.data['name'],
 				groupname = self.data['groupname'],
 				description = self.data['description'],
 				grouptype = self.data['type'],
 				address = Chat.objects.create(),
-				creator = Person.objects.get(id=1) # Corrigir
+				creator = session.user
 			)
 
 	# PUT /api/groups/<pk>/
 	def update(self, pk):
+		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
 		try:
 			group = Group.objects.get(id=pk)
+			
+			if session.user == group.creator:
+				group.name = self.data['name']
+				group.groupname = self.data['groupname']
+				group.description = self.data['description']
+				group.grouptype = self.data['type']
+				group.save()
+				
+				return group
+			else:
+				raise Warning('You have no permission to update this group')
+			
 		except:
-			group = Group(address=Chat.objects.create())
-			
-			group.name = self.data['name']
-			group.groupname = self.data['groupname']
-			group.description = self.data['description']
-			group.grouptype = self.data['type']
-			group.creator = Person.objects.get(id=1) # Corrigir
-			group.save()
-			
-			return group
+			raise Warning('The group you are trying to update does not exist')
 
 	# DELETE /api/groups/<pk>/
 	def delete(self, pk):
-		Group.objects.get(id=pk).delete()
+		session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+		try:
+			group = Group.objects.get(id=pk)
+			
+			if session.user == group.creator:
+				group.delete()
+				
+				return group
+			else:
+				raise Warning('You have no permission to delete this group')
+		
+		except:
+			raise Warning('The group you are trying to delete does not exist')
 	
 	def is_debug(self):
 		return False

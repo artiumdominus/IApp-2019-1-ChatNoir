@@ -40,7 +40,7 @@ As requisições deverão ser feitas para diretórios de um determinado endereç
 ### Login / Logout ( api/log/ )
 Para realizar algumas das operações é necessário estar logado. Para isto é necessário realizar a operação de login e obter um token que deverá ser utilizado para se identificar nestas operações restritas. Também pode ser pedido um novo token (relog) ou a destruição do token (logout) para se garantir que operações não serão feitas em seu nome até o próximo login.
 
-**!(Todas as operações exceto a de login exigirão a passagem do token pelo header da requisiçao no formato "Token: ‹token›")**
+**!(Todas as operações exceto login e logon exigirão a passagem do token pelo header da requisiçao no formato "Token: ‹token›")**
 
 - Login: POST » **host**/api/log/
 
