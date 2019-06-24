@@ -340,7 +340,11 @@ class MessageResource(DjangoResource):
 		})
 
 	def is_authenticated(self):
-		return True
+		try:
+			self.session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+			return True
+		except:
+			return False
 
 	# GET /api/messages/
 	def list(self):
@@ -355,7 +359,7 @@ class MessageResource(DjangoResource):
 		Message.objects.create(
 				content = self.data['content'],
 				dispatch = datetime.now(),
-				emitter = Person.objects.get(id=1), # Corrigir
+				emitter = self.session.user,
 				receptor = Chat.objects.get(id=self.data['receptor']),
 				status = '1'
 			)

@@ -42,3 +42,4 @@
 [ ] Implementar input/output literal do grouptype  
 [ ] Filtrar Memberships em GET » host/api/memberships & GET » host/api/memberships/{id}/  
 [ ] Evitar duplicação de 'Memberships'  
+[ ] Melhorar GET » host/api/messages/
