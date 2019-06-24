@@ -265,7 +265,11 @@ class MembershipResource(DjangoResource):
 		})
 
 	def is_authenticated(self):
-		return True
+		try:
+			self.session = Session.objects.get(token=self.request.META.get('HTTP_TOKEN'))
+			return True
+		except:
+			return False
 
 	# GET /api/memberships/
 	def list(self):
@@ -277,26 +281,53 @@ class MembershipResource(DjangoResource):
 
 	# POST /api/memberships/
 	def create(self):
-		Membership.objects.create(
-				group = Group.objects.get(id=self.data['group']),
-				person = Group.objects.get(id=self.data['person']),
+		group = Group.objects.get(id=self.data['group'])
+		person = Person.objects.get(id=self.data['person'])
+		
+		if person == self.session.user:
+			if group.grouptype != '0':
+				raise Warning('You cannot join a private group')
+		else:
+			if group.creator != self.session.user:
+				raise Warning('You cannot add a person in a group that is not yours')
+		
+		return Membership.objects.create(
+				group = group,
+				person = person,
 				admin = False
 			)
 
 	# PUT /api/memberships/<pk>/
 	def update(self, pk):
-		try:
-			membership = Membership.objects.get(id=pk)
-		except:
-			membership = Membership()
-
+		membership = Membership.objects.get(id=pk)
+		
+		if membership.group.creator != self.session.user:
+			raise Warning('You cannot add/remove admins in a group that is not yours')
+		
 		membership.admin = self.data['admin']
+		membership.save()
 		
 		return membership
 
 	# DELETE /api/memberships/<pk>/
 	def delete(self, pk):
-		Membership.objects.get(id=pk).delete()
+		membership = Membership.objects.get(id=pk)
+		
+		if membership.group.creator != self.session.user or not self.is_admin(self.session.user, membership.group):
+			raise Warning('You cannot remove members from a group that is not yours or you don\'t administrate')
+		
+		membership.delete()
+	
+	def is_debug(self):
+		return False
+	
+	@staticmethod
+	def is_admin(person, group):
+		try:
+			membership = Membership.objects.get(person=person, group=group)
+			return membership.admin
+		except:
+			return False
 
 class MessageResource(DjangoResource):
 	preparer = FieldsPreparer(fields={
