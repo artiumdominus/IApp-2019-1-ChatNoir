@@ -35,7 +35,7 @@ Serviço de mensagens
 * --
 
 ## Manual da API RESTful:
-As requisições deverão ser feitas para diretórios de um determinado endereço que por hora vamos chamar de **host/**
+As requisições deverão ser feitas para diretórios do endereço { https://le-chat-noir.herokuapp.com/ } que por praticidade vamos chamar de **host/**
 
 ### Login / Logout ( api/log/ )
 Para realizar algumas das operações é necessário estar logado. Para isto é necessário realizar a operação de login e obter um token que deverá ser utilizado para se identificar nestas operações restritas. Também pode ser pedido um novo token (relog) ou a destruição do token (logout) para se garantir que operações não serão feitas em seu nome até o próximo login.
@@ -124,9 +124,9 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 | creator     | string             |       |   ×   |      |        |
 | members     | array<string>      |       |   ×   |      |        |
 
-*type pode manter dois possíveis valores: "public" & "private"  
+*type pode manter dois possíveis valores: "public" & "private".  
 
-*type can hold two possible values: "public" & "private"  
+*type can hold two possible values: "public" & "private".  
 
 ### Membership ( api/memberships/ )
 
@@ -142,6 +142,8 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 | group  | → int/string → |    ×   |   ×   |    ×   |
 | person | → int/string → |    ×   |   ×   |    ×   |
 | admin  | boolean        |        |   ×   |    ×   |
+
+obs.: " → int/string → " significa que para inputs deve ser passado o id como int, mas no output serão retornados strings.  
 
 ### Message ( api/messages/ )
 
