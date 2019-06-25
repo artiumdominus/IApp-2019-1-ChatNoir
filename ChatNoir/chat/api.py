@@ -21,7 +21,7 @@ class ChatResource(DjangoResource):
 	def is_authenticated(self):
 		# Open everything wide!
 		# DANGEROUS, DO NOT DO IN PRODUCTION.
-		return True;
+		return False;
 	
 		# Alternatively, if the user is logged into the site...
 		# return self.request.user.is_authenticated()
@@ -356,7 +356,7 @@ class MessageResource(DjangoResource):
 
 	# POST /api/messages/
 	def create(self):
-		Message.objects.create(
+		return Message.objects.create(
 				content = self.data['content'],
 				dispatch = datetime.now(),
 				emitter = self.session.user,
@@ -376,6 +376,9 @@ class MessageResource(DjangoResource):
 	# DELETE /api/messages/<pk>/
 	def delete(self, pk):
 		Message.objects.get(id=pk).delete()
+		
+	def is_debug(self):
+		return False
 
 class Log(DjangoResource):
 	
@@ -423,3 +426,5 @@ class Log(DjangoResource):
 		
 		return {'username': user.username, 'deletedtoken': token}
 	
+	def is_debug(self):
+		return False

@@ -124,7 +124,9 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 | creator     | string             |       |   ×   |      |        |
 | members     | array<string>      |       |   ×   |      |        |
 
-*type can hold two possible values: "public" & "private"
+*type pode manter dois possíveis valores: "public" & "private"  
+
+*type can hold two possible values: "public" & "private"  
 
 ### Membership ( api/memberships/ )
 
@@ -149,30 +151,22 @@ Para realizar algumas das operações é necessário estar logado. Para isto é 
 - PUT » **host**/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado
 - DELETE » **host**/api/messages/{id}/ : Exclui uma mensagem
 
-| Campos   | Tipo                | create | ouput | update |
-|----------|---------------------|:------:|:-----:|:------:|
-| id       | int                 |        |   ×   |        |
-| content  | string (len ≤ 1000) |    ×   |   ×   |    ×   |
-| dispatch | datetime            |        |   ×   |        |
-| emitter  | string              |        |   ×   |        |
-| receptor | id                  |        |   ×   |        |
-| status*  | string              |        |   ×   |    ×   |
+| Campos    | Tipo                | create | ouput | update |
+|-----------|---------------------|:------:|:-----:|:------:|
+| id        | int                 |        |   ×   |        |
+| content   | string (len ≤ 1000) |    ×   |   ×   |    ×   |
+| dispatch  | datetime            |        |   ×   |        |
+| emitter   | string              |        |   ×   |        |
+| receptor* | int                 |    ×   |   ×   |        |
+| status**  | string              |        |   ×   |    ×   |
 
-*status can hold four possible values: "Rascunho" → "Enviado" → "Entregue" → "Visualizado"
+*receptor é o endereço (address) de uma pessoa (person) ou grupo (group), não o id.  
+Quando for recuperar suas próprias mensagens, pegue as que foram enviadas para o seu próprio endereço.  
+
+**status pode manter quardo possíveis valores: "draft" → "sent" → "delivered" → "visualized"  
+Você só pode atribuir um novo valor para o status se este estiver à frente do antigo na sequência.  
+
+**status can hold four possible values: "draft" → "sent" → "delivered" → "visualized"  
 you can only set a new value for status that is foward from the old one.
 
-### Chat ( api/chats/ )
 
-- GET » **host**/api/chats/ : Funcionalidade inútil
-- GET » **host**/api/chats/{id}/ : Funcionalidade inútil
-- POST » **host**/api/chats/ : Funcionalidade inútil
-- PUT » **host**/api/chats/{id}/ : Funcionalidade inútil
-- DELETE » **host**/api/chats/{id}/ : Funcionalidade inútil
-
-| Campos           | Tipo              | input | ouput | null | update |
-|------------------|-------------------|:-----:|:-----:|:----:|:------:|
-| id               | int               |       |   ×   |      |        |
-| background_color | string (len ≤ 20) |   ×   |   ×   |   ×  |    ×   |
-| text_color       | string (len ≤ 20) |   ×   |   ×   |   ×  |    ×   |
-
-background_color & text_color must be CSS color names.

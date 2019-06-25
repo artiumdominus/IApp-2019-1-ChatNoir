@@ -22,15 +22,15 @@
 
 [ ] GET » host/api/messages/ : Obtém uma lista de mensagens  
 [ ] GET » host/api/messsages/{id}/ : Obtém informações de uma mensagem específica  
-[ ] POST » host/api/messages/ : Envia uma mensagem  
+[×] POST » host/api/messages/ : Envia uma mensagem  
 [ ] PUT » host/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado  
 [ ] DELETE » host/api/messages/{id}/ : Exclui uma mensagem  
 
-[ ] GET » host/api/chats/ : Funcionalidade inútil  
-[ ] GET » host/api/chats/{id}/ : Funcionalidade inútil  
-[ ] POST » host/api/chats/ : Funcionalidade inútil  
-[ ] PUT » host/api/chats/{id}/ : Funcionalidade inútil  
-[ ] DELETE » host/api/chats/{id}/ : Funcionalidade inútil  
+[-] GET » host/api/chats/ : Funcionalidade inútil  
+[-] GET » host/api/chats/{id}/ : Funcionalidade inútil  
+[-] POST » host/api/chats/ : Funcionalidade inútil  
+[-] PUT » host/api/chats/{id}/ : Funcionalidade inútil  
+[-] DELETE » host/api/chats/{id}/ : Funcionalidade inútil  
 
 ## Tarefas:
 
