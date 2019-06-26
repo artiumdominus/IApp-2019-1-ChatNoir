@@ -20,11 +20,11 @@
 [×] PUT » host/api/memberships/{id}/ : Promove um membro a administrador ou rebaixa a membro coum  
 [×] DELETE » host/api/memberships/{id}/ : Remove um membro de um grupo  
 
-[ ] GET » host/api/messages/ : Obtém uma lista de mensagens  
-[ ] GET » host/api/messsages/{id}/ : Obtém informações de uma mensagem específica  
+[×] GET » host/api/messages/ : Obtém uma lista de mensagens  
+[×] GET » host/api/messsages/{id}/ : Obtém informações de uma mensagem específica  
 [×] POST » host/api/messages/ : Envia uma mensagem  
-[ ] PUT » host/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado  
-[ ] DELETE » host/api/messages/{id}/ : Exclui uma mensagem  
+[×] PUT » host/api/messages/{id}/ : Edita uma mensagem / Marca como entregue ou visualizado  
+[×] DELETE » host/api/messages/{id}/ : Exclui uma mensagem  
 
 [-] GET » host/api/chats/ : Funcionalidade inútil  
 [-] GET » host/api/chats/{id}/ : Funcionalidade inútil  
@@ -39,7 +39,8 @@
 [ ] Corrigir PUT » host/api/persons/{id}/  
 [ ] Melhorar GET » host/api/groups/  
 [ ] Melhorar GET » host/api/groups/{id}/  
-[ ] Implementar input/output literal do grouptype  
+[ ] Implementar input/output literal do Group.grouptype  
 [ ] Filtrar Memberships em GET » host/api/memberships & GET » host/api/memberships/{id}/  
 [ ] Evitar duplicação de 'Memberships'  
-[ ] Melhorar GET » host/api/messages/
+[ ] Melhorar GET » host/api/messages/  
+[ ] Implementar input/output literal do Message.status  
